@@ -20,10 +20,12 @@ const hint = (theme) => `
 `;
 
 const error = (theme) => `
+  font-size: ${theme.fontSizes.button};
   color: ${theme.colors.text.error};
 `;
 
 const success = (theme) => `
+  font-size: ${theme.fontSizes.button};
   color: ${theme.colors.text.success};
 `;
 

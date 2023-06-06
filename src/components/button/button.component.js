@@ -20,7 +20,6 @@ const Content = styled(Text)`
   text-transform: uppercase;
   font-family: ${({ theme }) => theme.fonts.heading};
   color: ${({ color }) => color};
-  font-size: ${({ theme }) => theme.fontSizes.button};
   text-align: center;
 `;
 
@@ -59,7 +58,7 @@ export const Button = ({
       {loading ? (
         <ActivityIndicator size="large" color={textColor} />
       ) : (
-        <Content color={textColor} trsKey={titleTrsKey} />
+        <Content color={textColor} trsKey={titleTrsKey} variant="hint" />
       )}
     </Container>
   );
