@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+
+import "react-native-reanimated";
+
+import { StatusBar } from "./src/components";
+import { RootNavigator } from "./src/infrastructures/navigation/root.navigator";
+import { ThemeContextProvider } from "./src/infrastructures/theme";
+import { AuthContextProvider } from "./src/services/authentication/authentication.context";
+import i18n from "./src/translations";
+import { getLanguage } from "./src/utils/async-storage.util";
+import { useFonts } from "./src/utils/use-fonts.util";
 
 export default function App() {
+  const isFontsLoaded = useFonts();
+
+  getLanguage().then((language) => {
+    if (language) {
+      i18n.changeLanguage(language);
+    }
+  });
+
+  if (!isFontsLoaded) {
+    return;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeContextProvider>
+      <AuthContextProvider>
+        <NavigationContainer>
+          <RootNavigator />
+          <StatusBar />
+        </NavigationContainer>
+      </AuthContextProvider>
+    </ThemeContextProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

@@ -1,0 +1,29 @@
+{
+  "welcome" : "some greeting text here ",
+  "button": {
+    "login": "Se connecter"
+  },
+  "input": {
+    "empty_list": {},
+    "label": {
+      "email": "email :",
+      "password": "mot de passe :"
+    },
+    "placeholder": {
+      "email": "email",
+      "password": "mot de passe"
+    },
+    "rule_message": {
+      "number": "doit être un nombre.",
+      "required": "ce champ est obligatoire."
+    }
+  },
+  "navigation": {
+    "home": "Accueil"
+  },
+  "settings": {
+    "language": "Language",
+    "logout": "Se déconnecter",
+    "dark_mode": "Thème sombre"
+  }
+}

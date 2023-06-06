@@ -1,0 +1,29 @@
+{
+  "welcome" : "some greeting text here ",
+  "button": {
+    "login": "تسجيل الدخول "
+  },
+  "input": {
+    "empty_list": {},
+    "label": {
+      "email": "البريد الإلكتروني :",
+      "password": "كلمة السر :"
+    },
+    "placeholder": {
+      "email": "بريد إلكتروني",
+      "password": "كلمة السر"
+    },
+    "rule_message": {
+      "number": "يجب أن يكون رقما.",
+      "required": "هدا الحقل اجباري."
+    }
+  },
+  "navigation": {
+    "home": "الرئيسية"
+  },
+  "settings": {
+    "language": "اللغة",
+    "logout": "تسجيل الخروج",
+    "dark_mode": "المظهر الداكن"
+  }
+}
