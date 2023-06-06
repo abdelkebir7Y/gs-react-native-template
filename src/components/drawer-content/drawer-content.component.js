@@ -111,7 +111,7 @@ const DRAWER_ITEMS_FOURTH_SECTION = [
 export const DrawerContent = ({ navigation }) => {
   const { logout } = useContext(AuthContext);
   const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
-  const user = { lastName: "Green", firstName: "solutions" };
+  const user = { lastName: "solutions", firstName: "Green" };
   const theme = useTheme();
 
   const onItemPressed = (route) => () => {

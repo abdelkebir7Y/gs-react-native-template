@@ -32,11 +32,14 @@ const TextInputWrapper = styled.View`
 
 const TextInput = styled.TextInput`
   width: 100%;
+  height: 100%;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   color: ${({ theme }) => theme.colors.text.primary};
   font-family: ${({ theme }) => theme.fonts.body};
   margin-top: 0px;
   margin-bottom: 0px;
+  vertical-align: top;
+  padding: ${({ theme }) => theme.space[2]} ${({ theme }) => theme.space[0]};
 `;
 
 export const TextArea = ({

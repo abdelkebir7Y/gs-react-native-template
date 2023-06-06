@@ -1,15 +1,17 @@
 import React from "react";
 import { ActivityIndicator } from "react-native";
-import styled from "styled-components/native";
+import styled, { useTheme } from "styled-components/native";
 
 import { Text } from "../typography/text.component";
 
 const Container = styled.TouchableHighlight`
-  background-color: ${({ bgColor, disabled, theme }) =>
-    disabled ? theme.colors.ui.quinary : bgColor};
+  background-color: ${({ bgColor }) => bgColor};
+  border-width: ${({ outlined }) => (outlined ? "1px" : "0px")};
+  border-color: ${({ theme }) => theme.colors.ui.primary};
   border-radius: ${({ theme }) => theme.sizes[0]};
   height: 48px;
   width: ${({ width }) => width};
+  padding: ${({ theme }) => theme.space[0]} ${({ theme }) => theme.space[3]};
   justify-content: center;
 `;
 
@@ -23,26 +25,41 @@ const Content = styled(Text)`
 `;
 
 export const Button = ({
-  bgColor = "#61B55D",
-  color = "#F4F4F4",
-  width = "100%",
+  bgColor,
+  color,
+  width = "auto",
   titleTrsKey,
   loading,
   disabled = false,
+  outlined = false,
   onPress = () => {},
 }) => {
+  const theme = useTheme();
+
+  const textColor =
+    color ?? outlined
+      ? bgColor ?? theme.colors.ui.primary
+      : theme.colors.text.inverse;
+
+  const backgroundColor = disabled
+    ? theme.colors.ui.disabled
+    : bgColor ?? (outlined ? "#0000" : theme.colors.ui.primary);
+
+  const underlayColor = bgColor ?? theme.colors.ui.primary;
+
   return (
     <Container
-      bgColor={bgColor}
+      bgColor={backgroundColor}
       width={width}
-      underlayColor={`${bgColor}ee`}
+      underlayColor={`${underlayColor}77`}
       onPress={onPress}
       disabled={disabled}
+      outlined={outlined}
     >
       {loading ? (
-        <ActivityIndicator size="large" color={color} />
+        <ActivityIndicator size="large" color={textColor} />
       ) : (
-        <Content color={color} trsKey={titleTrsKey} />
+        <Content color={textColor} trsKey={titleTrsKey} />
       )}
     </Container>
   );

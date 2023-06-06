@@ -1,5 +1,5 @@
 {
-  "welcome" : "some greeting text here ",
+  "greeting" : "Bonjour ",
   "button": {
     "login": "Se connecter"
   },

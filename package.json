@@ -43,7 +43,7 @@
     "eslint-plugin-simple-import-sort": "^9.0.0",
     "prettier": "^2.7.1"  
   },
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/abdelkebir7Y/gs-react-native-template.git"

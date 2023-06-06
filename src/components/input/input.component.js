@@ -49,13 +49,12 @@ export const Input = ({
   name,
   labelTrsKey,
   placeholderTrsKey,
-  rules,
   ...textInputProps
 }) => {
   const {
     field: { onChange, value },
     fieldState: { error, invalid },
-  } = useController({ control, name, rules });
+  } = useController({ control, name });
 
   const { t } = useTranslation();
   const theme = useTheme();
