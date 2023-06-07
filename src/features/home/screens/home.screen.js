@@ -40,19 +40,23 @@ export const Home = ({ navigation: { navigate } }) => {
       <Spacer size="medium" />
       <Component>
         <ComponentVariant>Normal : </ComponentVariant>
-        <Button titleTrsKey={"login"} />
+        <Button titleTrsKey={"button.login"} />
       </Component>
       <Component>
         <ComponentVariant>width = 200px : </ComponentVariant>
-        <Button titleTrsKey={"login"} width="200px" />
+        <Button titleTrsKey={"button.login"} width="200px" />
+      </Component>
+      <Component>
+        <ComponentVariant>loading : </ComponentVariant>
+        <Button titleTrsKey={"button.login"} width="200px" loading />
       </Component>
       <Component>
         <ComponentVariant>Outlined : </ComponentVariant>
-        <Button titleTrsKey={"login"} width="200px" outlined />
+        <Button titleTrsKey={"button.login"} width="200px" outlined />
       </Component>
       <Component>
         <ComponentVariant>Disabled : </ComponentVariant>
-        <Button titleTrsKey={"login"} width="200px" disabled />
+        <Button titleTrsKey={"button.login"} width="200px" disabled />
       </Component>
 
       <Spacer size="xl" />
@@ -61,39 +65,39 @@ export const Home = ({ navigation: { navigate } }) => {
       <Spacer size="medium" />
       <Component>
         <ComponentVariant>Default : </ComponentVariant>
-        <Text trsKey={"welcome"} />
+        <Text trsKey={"greeting"} />
       </Component>
       <Component>
         <ComponentVariant>caption : </ComponentVariant>
-        <Text trsKey={"welcome"} variant="caption" />
+        <Text trsKey={"greeting"} variant="caption" />
       </Component>
       <Component>
         <ComponentVariant>hint : </ComponentVariant>
-        <Text trsKey={"welcome"} variant="hint" />
+        <Text trsKey={"greeting"} variant="hint" />
       </Component>
       <Component>
         <ComponentVariant>label : </ComponentVariant>
-        <Text trsKey={"welcome"} variant="label" />
+        <Text trsKey={"greeting"} variant="label" />
       </Component>
       <Component>
         <ComponentVariant>Title : </ComponentVariant>
-        <Text trsKey={"welcome"} variant="title" />
+        <Text trsKey={"greeting"} variant="title" />
       </Component>
       <Component>
         <ComponentVariant>h5 : </ComponentVariant>
-        <Text trsKey={"welcome"} variant="h5" />
+        <Text trsKey={"greeting"} variant="h5" />
       </Component>
       <Component>
         <ComponentVariant>h4 : </ComponentVariant>
-        <Text trsKey={"welcome"} variant="h4" />
+        <Text trsKey={"greeting"} variant="h4" />
       </Component>
       <Component>
         <ComponentVariant>error : </ComponentVariant>
-        <Text trsKey={"welcome"} variant="error" />
+        <Text trsKey={"greeting"} variant="error" />
       </Component>
       <Component>
         <ComponentVariant>success : </ComponentVariant>
-        <Text trsKey={"welcome"} variant="success" />
+        <Text trsKey={"greeting"} variant="success" />
       </Component>
 
       <Spacer size="xl" />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 import styled, { useTheme } from "styled-components/native";
@@ -47,10 +47,11 @@ const DeleteIcon = styled(Ionicons)`
 
 export const ImageInput = ({ labelTrsKey }) => {
   const [image, setImage] = useState(null);
+  const [permissionGranted, setPermissionGranted] = useState(false);
   const theme = useTheme();
 
-  const pickImage = async () => {
-    let result = await ImagePicker.launchCameraAsync({
+  const takeImage = async () => {
+    const result = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       quality: 1,
     });
@@ -59,7 +60,26 @@ export const ImageInput = ({ labelTrsKey }) => {
     }
   };
 
+  const pickImage = async () => {
+    if (!permissionGranted) {
+      const { granted } = await ImagePicker.requestCameraPermissionsAsync();
+      if (granted) {
+        await takeImage();
+      }
+    } else {
+      await takeImage();
+    }
+  };
+
   const removeImage = () => setImage(null);
+
+  useEffect(() => {
+    const requestPermissions = async () => {
+      const { granted } = await ImagePicker.getCameraPermissionsAsync();
+      setPermissionGranted(granted);
+    };
+    requestPermissions();
+  }, []);
 
   return (
     <>

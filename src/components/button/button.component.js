@@ -52,7 +52,7 @@ export const Button = ({
       width={width}
       underlayColor={`${underlayColor}77`}
       onPress={onPress}
-      disabled={disabled}
+      disabled={disabled || loading}
       outlined={outlined}
     >
       {loading ? (
