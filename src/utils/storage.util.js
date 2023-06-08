@@ -1,8 +1,10 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { MMKV } from "react-native-mmkv";
+
+const storage = new MMKV();
 
 export const storeToken = async (token) => {
   try {
-    await AsyncStorage.setItem("@token", token);
+    await storage.set("@token", token);
   } catch (e) {
     console.log(e);
   }
@@ -10,7 +12,7 @@ export const storeToken = async (token) => {
 
 export const getToken = async () => {
   try {
-    const token = await AsyncStorage.getItem("@token");
+    const token = await storage.getString("@token");
     return token ?? "";
   } catch (e) {
     console.log(e);
@@ -19,7 +21,7 @@ export const getToken = async () => {
 
 export const clearToken = async () => {
   try {
-    await AsyncStorage.removeItem("@token");
+    await storage.set("@token", "");
   } catch (e) {
     console.log(e);
   }
@@ -27,7 +29,7 @@ export const clearToken = async () => {
 
 export const storeLanguage = async (language) => {
   try {
-    await AsyncStorage.setItem("@language", language);
+    await storage.set("@language", language);
   } catch (e) {
     console.log(e);
   }
@@ -35,7 +37,7 @@ export const storeLanguage = async (language) => {
 
 export const getLanguage = async () => {
   try {
-    const language = await AsyncStorage.getItem("@language");
+    const language = await storage.getString("@language");
     return language ?? "";
   } catch (e) {
     console.log(e);
