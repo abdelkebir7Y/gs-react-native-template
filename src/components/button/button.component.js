@@ -46,9 +46,14 @@ export const Button = ({
 
   const underlayColor = bgColor ?? theme.colors.ui.primary;
 
+  const borderColor = disabled
+    ? theme.colors.ui.disabled
+    : bgColor ?? theme.colors.ui.primary;
+
   return (
     <Container
       bgColor={backgroundColor}
+      borderColor={borderColor}
       width={width}
       underlayColor={`${underlayColor}77`}
       onPress={onPress}

@@ -21,8 +21,7 @@ const Container = styled.SafeAreaView`
 
 const Header = styled.View`
   background-color: ${({ theme }) => theme.colors.brand.secondary};
-  padding-top: ${StatusBar.currentHeight ?? 0}px;
-  height: ${TOP_BAR_HEIGHT + StatusBar.currentHeight}px;
+  height: ${TOP_BAR_HEIGHT}px;
   width: 100%;
   overflow: hidden;
 `;

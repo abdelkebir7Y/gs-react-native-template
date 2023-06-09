@@ -1,5 +1,4 @@
 import React from "react";
-import { StatusBar } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import styled from "styled-components/native";
@@ -10,9 +9,7 @@ const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.brand.secondary};
   z-index: 111;
 `;
-const ContentWrapper = styled.SafeAreaView`
-  padding-top: ${StatusBar.currentHeight ?? 0}px;
-`;
+const ContentWrapper = styled.SafeAreaView``;
 
 const Content = styled.View`
   height: ${TOP_BAR_HEIGHT}px;

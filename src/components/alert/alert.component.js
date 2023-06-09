@@ -24,6 +24,7 @@ export const ALert = () => {
   return (
     <DropdownAlertWrapper
       ref={(ref) => alertHolder.setAlertRef(ref)}
+      inactiveStatusBarBackgroundColor={theme.colors.brand.secondary}
       successColor={theme.colors.ui.success}
       infoColor={theme.colors.ui.info}
       warnColor={theme.colors.ui.warning}
