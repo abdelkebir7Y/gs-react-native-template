@@ -25,8 +25,8 @@ export const ALert = () => {
     <DropdownAlertWrapper
       ref={(ref) => alertHolder.setAlertRef(ref)}
       successColor={theme.colors.ui.success}
-      infoColor={theme.colors.ui.primary}
-      warnColor={theme.colors.ui.error}
+      infoColor={theme.colors.ui.info}
+      warnColor={theme.colors.ui.warning}
       errorColor={theme.colors.ui.error}
       renderTitle={(_, { title }) => <Title variant="h5">{title}</Title>}
       renderMessage={(_, { message }) => <Message>{message}</Message>}

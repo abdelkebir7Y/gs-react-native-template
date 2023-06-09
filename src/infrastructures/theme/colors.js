@@ -14,7 +14,7 @@ export const lightColors = {
     error: "#cc3232",
     success: "#32A54A",
     info: "#2B73B6",
-    warnning: "#cd853f",
+    warning: "#cd853f",
   },
   bg: {
     primary: "#FFFFFF", //
@@ -47,7 +47,7 @@ export const darkColors = {
     error: "#cc3232",
     success: "#32A54A",
     info: "#2B73B6",
-    warnning: "#cd853f",
+    warning: "#cd853f",
   },
   bg: {
     primary: "#2D332E", //

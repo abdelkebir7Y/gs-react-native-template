@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import styled from "styled-components/native";
+import styled, { useTheme } from "styled-components/native";
 
 import {
   Button,
@@ -22,8 +22,10 @@ const Container = styled.ScrollView`
 
 const Component = styled.View`
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   padding: ${({ theme }) => theme.space[1]};
+  gap: 12px;
 `;
 
 const ComponentVariant = styled(Text)`
@@ -34,9 +36,14 @@ export const Home = ({ navigation: { navigate } }) => {
   const [enableSwitch, setEnableSwitch] = useState(true);
   const { control } = useForm({});
   const alert = useAlert();
+  const theme = useTheme();
 
-  const showAlert = () => {
-    alert.show("success", "Error", `${Math.random()}`);
+  const showAlert = (type) => () => {
+    alert.show(
+      type,
+      "Ad ullamco",
+      "Nulla dolore exercitation ipsum exercitation ex amet."
+    );
   };
 
   return (
@@ -46,7 +53,7 @@ export const Home = ({ navigation: { navigate } }) => {
       <Spacer size="medium" />
       <Component>
         <ComponentVariant>Normal : </ComponentVariant>
-        <Button titleTrsKey={"button.login"} onPress={showAlert} />
+        <Button titleTrsKey={"button.login"} />
       </Component>
       <Component>
         <ComponentVariant>width = 200px : </ComponentVariant>
@@ -141,6 +148,38 @@ export const Home = ({ navigation: { navigate } }) => {
           toggleSwitch={() => setEnableSwitch(!enableSwitch)}
         />
       </Component>
+
+      <Spacer size="xl" />
+
+      <Text variant="h5">Alert :</Text>
+      <Spacer size="medium" />
+      <Component>
+        <Button
+          titleTrsKey={"success"}
+          width="200px"
+          onPress={showAlert("success")}
+          bgColor={theme.colors.ui.success}
+        />
+        <Button
+          titleTrsKey={"error"}
+          width="200px"
+          onPress={showAlert("error")}
+          bgColor={theme.colors.ui.error}
+        />
+        <Button
+          titleTrsKey={"info"}
+          width="200px"
+          onPress={showAlert("info")}
+          bgColor={theme.colors.ui.info}
+        />
+        <Button
+          titleTrsKey={"warning"}
+          width="200px"
+          onPress={showAlert("warn")}
+          bgColor={theme.colors.ui.warning}
+        />
+      </Component>
+
       <Spacer size="xxl" />
     </Container>
   );
