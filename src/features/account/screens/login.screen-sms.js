@@ -2,7 +2,13 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components/native";
 
-import { Button, Input, SafeArea, Spacer } from "../../../components";
+import {
+  Button,
+  Input,
+  KeyboardAvoidingView,
+  SafeArea,
+  Spacer,
+} from "../../../components";
 import { AuthContext } from "../../../services/authentication/authentication.context";
 
 import { loginZodResolver } from "../helpers/zod-resolver.helper";
@@ -41,16 +47,7 @@ const Form = styled.View`
   border-radius: ${({ theme }) => theme.space[2]};
 `;
 
-const BackgroundWrapper = styled.View`
-  opacity: 0.7;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-`;
-
-const Background = styled.Image`
+const Background = styled.ImageBackground`
   height: 100%;
   width: 100%;
 `;
@@ -68,45 +65,46 @@ export const Login = () => {
 
   return (
     <Container>
-      <BackgroundWrapper>
-        <Background
-          source={require("../../../assets/images/bg.png")}
-          resizeMode="cover"
-        />
-      </BackgroundWrapper>
-      <Content>
-        <Logo
-          source={require("../../../assets/images/green-solutions-logo.png")}
-          resizeMode="contain"
-        />
-        <Spacer size="xl" />
-        <FormWrapper>
-          <Form>
-            <Input
-              labelTrsKey="input.label.email"
-              placeholderTrsKey="input.placeholder.email"
-              control={control}
-              name="email"
-              autoComplete="email"
-              keyboardType="email-address"
-            />
-            <Spacer />
-            <Input
-              labelTrsKey="input.label.password"
-              placeholderTrsKey="input.placeholder.password"
-              control={control}
-              name="password"
-              secureTextEntry
+      <Background
+        source={require("../../../assets/images/bg.png")}
+        resizeMode="cover"
+      >
+        <KeyboardAvoidingView>
+          <Content>
+            <Logo
+              source={require("../../../assets/images/green-solutions-logo.png")}
+              resizeMode="contain"
             />
             <Spacer size="xl" />
-            <Button
-              titleTrsKey="button.login"
-              onPress={handleSubmit(onSubmit)}
-            />
-          </Form>
-        </FormWrapper>
+            <FormWrapper>
+              <Form>
+                <Input
+                  labelTrsKey="input.label.email"
+                  placeholderTrsKey="input.placeholder.email"
+                  control={control}
+                  name="email"
+                  autoComplete="email"
+                  keyboardType="email-address"
+                />
+                <Spacer />
+                <Input
+                  labelTrsKey="input.label.password"
+                  placeholderTrsKey="input.placeholder.password"
+                  control={control}
+                  name="password"
+                  secureTextEntry
+                />
+                <Spacer size="xl" />
+                <Button
+                  titleTrsKey="button.login"
+                  onPress={handleSubmit(onSubmit)}
+                />
+              </Form>
+            </FormWrapper>
+          </Content>
+        </KeyboardAvoidingView>
         <Spacer size="xxl" />
-      </Content>
+      </Background>
     </Container>
   );
 };

@@ -10,5 +10,6 @@ export { Switch } from "./switch/switch.component";
 export { TextArea } from "./textarea/textarea.component";
 export { TopBar } from "./top-bar/top-bar.component";
 export { Text } from "./typography/text.component";
+export { KeyboardAvoidingView } from "./utility/keyboard-avoid-view.component";
 export { RtlView } from "./utility/rtl-view.component";
 export { SafeArea } from "./utility/safe-area.component";
