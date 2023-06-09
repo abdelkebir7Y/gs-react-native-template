@@ -4,7 +4,7 @@ import { I18nManager } from "react-native";
 import * as Updates from "expo-updates";
 import styled from "styled-components/native";
 
-import { storeLanguage } from "../../utils/async-storage.util";
+import { storeLanguage } from "../../utils/storage.util";
 const Container = styled.View`
   flex-direction: row;
 `;
