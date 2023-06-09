@@ -1,7 +1,11 @@
 import React, { createContext, useCallback, useState } from "react";
 
 import { AUTH_STATUS } from "../../_constant";
-import { clearToken, getToken, storeToken } from "../../utils/storage.util";
+import {
+  clearToken,
+  getToken,
+  storeToken,
+} from "../../utils/async-storage.util";
 
 export const AuthContext = createContext();
 

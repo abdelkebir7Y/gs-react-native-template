@@ -8,7 +8,7 @@ import { RootNavigator } from "./src/infrastructures/navigation/root.navigator";
 import { ThemeContextProvider } from "./src/infrastructures/theme";
 import { AuthContextProvider } from "./src/services/authentication/authentication.context";
 import i18n from "./src/translations";
-import { getLanguage } from "./src/utils/storage.util";
+import { getLanguage } from "./src/utils/async-storage.util";
 import { useFonts } from "./src/utils/use-fonts.util";
 
 export default function App() {
