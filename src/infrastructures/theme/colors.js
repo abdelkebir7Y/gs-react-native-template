@@ -11,8 +11,10 @@ export const lightColors = {
     quaternary: "#A39E9E", //
     quinary: "#706D6D", //
     disabled: "#cdcdcd", //
-    error: "#D9785D",
-    success: "#138000",
+    error: "#cc3232",
+    success: "#32A54A",
+    info: "#2B73B6",
+    warnning: "#cd853f",
   },
   bg: {
     primary: "#FFFFFF", //
@@ -42,8 +44,10 @@ export const darkColors = {
     quaternary: "#D0D6D2", //
     quinary: "#D6D0D0", //
     disabled: "#9E9E9E", //
-    error: "#D0421B",
-    success: "#138000",
+    error: "#cc3232",
+    success: "#32A54A",
+    info: "#2B73B6",
+    warnning: "#cd853f",
   },
   bg: {
     primary: "#2D332E", //

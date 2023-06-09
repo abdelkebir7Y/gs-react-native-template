@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import "react-native-reanimated";
 
-import { StatusBar } from "./src/components";
+import { ALert, StatusBar } from "./src/components";
 import { RootNavigator } from "./src/infrastructures/navigation/root.navigator";
 import { ThemeContextProvider } from "./src/infrastructures/theme";
 import { AuthContextProvider } from "./src/services/authentication/authentication.context";
@@ -30,6 +30,7 @@ export default function App() {
         <NavigationContainer>
           <RootNavigator />
           <StatusBar />
+          <ALert />
         </NavigationContainer>
       </AuthContextProvider>
     </ThemeContextProvider>

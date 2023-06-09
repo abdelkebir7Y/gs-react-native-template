@@ -1,3 +1,4 @@
+export { ALert } from "./alert/alert.component";
 export { Button } from "./button/button.component";
 export { DrawerContent } from "./drawer-content/drawer-content.component";
 export { ImageInput } from "./image-input/image-input.component";

@@ -12,6 +12,7 @@ import {
   Text,
 } from "../../../components";
 import { TextArea } from "../../../components";
+import { useAlert } from "../../../utils/use-alert.util";
 
 const Container = styled.ScrollView`
   flex: 1;
@@ -32,6 +33,11 @@ const ComponentVariant = styled(Text)`
 export const Home = ({ navigation: { navigate } }) => {
   const [enableSwitch, setEnableSwitch] = useState(true);
   const { control } = useForm({});
+  const alert = useAlert();
+
+  const showAlert = () => {
+    alert.show("success", "Error", `${Math.random()}`);
+  };
 
   return (
     <Container>
@@ -40,7 +46,7 @@ export const Home = ({ navigation: { navigate } }) => {
       <Spacer size="medium" />
       <Component>
         <ComponentVariant>Normal : </ComponentVariant>
-        <Button titleTrsKey={"button.login"} />
+        <Button titleTrsKey={"button.login"} onPress={showAlert} />
       </Component>
       <Component>
         <ComponentVariant>width = 200px : </ComponentVariant>
