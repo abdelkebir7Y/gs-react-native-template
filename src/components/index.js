@@ -1,6 +1,7 @@
 export { ALert } from "./alert/alert.component";
 export { Button } from "./button/button.component";
 export { DrawerContent } from "./drawer-content/drawer-content.component";
+export { FAB } from "./floating-action-button/floating-action-button.component";
 export { ImageInput } from "./image-input/image-input.component";
 export { Input } from "./input/input.component";
 export { Select } from "./select/select.component";
